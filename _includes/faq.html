@@ -1,0 +1,15 @@
+<div class="wrapper">
+  {% for item in page.faq %}
+  {% assign random_number = "now" | date: "%N" | modulo: 1000 | plus: min %}
+  <div class="parent-tab">
+    <input type="radio" name="tab" id="tab-{{random_number}}" checked>
+    <label for="tab-{{random_number}}">
+      <span>{{item.question}}</span>
+      <div class="icon"><i class="fas fa-plus"></i></div>
+    </label>
+    <div class="content">
+      <p>{{item.answer}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
